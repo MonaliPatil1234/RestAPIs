@@ -15,8 +15,10 @@ public class Basics {
 		// GIVEN - ALL INPUT DETAILS
 		// WHEN - SUBMIT THE API, resource, http method
 		// THEN - VALIDATE THE RESPONSE
+		System.out.println("************************Add Place API***************************");
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
-		String response = given().queryParam("key", "qaclick123").header("Content-Type", "application/json")
+		String response = given().queryParam("key", "qaclick123").header("Content-Type",
+				"application/json")
 				.body(payload.AddPlace()).when().post("maps/api/place/add/json").then().log().all().assertThat()
 				.statusCode(200).body("scope", equalTo("APP")).header("Server", "Apache/2.4.52 (Ubuntu)").extract()
 				.response().asString();
@@ -26,8 +28,8 @@ public class Basics {
 		System.out.println(placeId);
 
 		// UPDATE PLACE
-
-		String newAdrs = "70 winter walk, Africa";
+		System.out.println("************************UPDATE Place API***************************");
+		String newAdrs = "72 winter walk, Africa";
 		given()
 		.log()
 		.all()
@@ -45,9 +47,11 @@ public class Basics {
 		.body("msg", equalTo("Address successfully updated"));
 
 		// GET PLACE API
-
-		String response1 = given().log().all().queryParam("key", "qaclick123").queryParam("place_id", placeId).when()
-				.get("maps/api/place/get/json").then().log().all().assertThat().statusCode(200).extract().response()
+		System.out.println("************************GET Place API***************************");
+		String response1 = given().log().all().queryParam("key", "qaclick123").queryParam("place_id", placeId)
+				.when()
+				.get("maps/api/place/get/json").
+				then().log().all().assertThat().statusCode(200).extract().response()
 				.asString();
 		System.out.println(response1);
 		js = ReusableMtds.rawToJson(response1);

@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-03T16:59:57 IST" name="Default suite" finished-at="2024-07-03T17:00:00 IST" duration-ms="3200">
+  <suite started-at="2024-09-30T18:14:00 IST" name="Default suite" finished-at="2024-09-30T18:14:09 IST" duration-ms="9326">
     <groups>
     </groups>
-    <test started-at="2024-07-03T16:59:57 IST" name="Default test" finished-at="2024-07-03T17:00:00 IST" duration-ms="3200">
-      <class name="RestAssuredDemo.SumValidation">
-        <test-method signature="validateSum()[pri:0, instance:RestAssuredDemo.SumValidation@692f203f]" started-at="2024-07-03T16:59:57 IST" name="validateSum" finished-at="2024-07-03T17:00:00 IST" duration-ms="3076" status="PASS">
+    <test started-at="2024-09-30T18:14:00 IST" name="Default test" finished-at="2024-09-30T18:14:09 IST" duration-ms="9326">
+      <class name="RestAssuredDemo.DynamicJson">
+        <test-method signature="addBook()[pri:0, instance:RestAssuredDemo.DynamicJson@38425407]" started-at="2024-09-30T18:14:00 IST" name="addBook" finished-at="2024-09-30T18:14:09 IST" duration-ms="9113" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateSum -->
-      </class> <!-- RestAssuredDemo.SumValidation -->
+        </test-method> <!-- addBook -->
+      </class> <!-- RestAssuredDemo.DynamicJson -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

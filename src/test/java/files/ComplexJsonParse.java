@@ -40,10 +40,10 @@ for(int i=0;i<count;i++)
 		System.out.println("No of Copies for the course RPA are "+js.get("courses["+i+"].copies").toString());
 		break;// stop the loop execution once RPA is found
 	}
-	
+}	
 	//VERIFY IF PURCHASE AMOUNT MATCHES WITH THE SUM OF COURSE PRICES
 	int sum = 0;
-	for(i=0;i<count;i++)
+	for(int i=0;i<count;i++)
 	{
 		
 		
@@ -54,7 +54,7 @@ for(int i=0;i<count;i++)
 	}
 	System.out.println(sum);
 	Assert.assertEquals(sum, purchaseamnt);
-}
+
  
 	}
 

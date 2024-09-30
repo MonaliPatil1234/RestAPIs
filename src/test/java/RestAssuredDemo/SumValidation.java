@@ -19,6 +19,8 @@ public class SumValidation {
 		// PRINT PURCHASE AMOUNT
 		int purchaseamnt = js.getInt("dashboard.purchaseAmount");
 		System.out.println(purchaseamnt);
+		System.out.println(js.getInt("courses[0].price"));
+		System.out.println(js.getInt("courses[0].copies"));
 		int sum = 0;
 		for (int i = 0; i < count; i++) {
 
