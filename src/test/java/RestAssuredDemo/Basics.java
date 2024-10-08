@@ -2,6 +2,11 @@ package RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import org.testng.Assert;
 
 import files.ReusableMtds;
@@ -10,7 +15,7 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 public class Basics {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// validate if AddPlace API is working as expected
 		// GIVEN - ALL INPUT DETAILS
 		// WHEN - SUBMIT THE API, resource, http method
@@ -18,8 +23,8 @@ public class Basics {
 		System.out.println("************************Add Place API***************************");
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
 		String response = given().queryParam("key", "qaclick123").header("Content-Type",
-				"application/json")
-				.body(payload.AddPlace()).when().post("maps/api/place/add/json").then().log().all().assertThat()
+				"application/json")//passing body from addplace.json file using String & bytes
+				.body(new String(Files.readAllBytes(Paths.get("C:\\Users\\madhu\\eclipse-workspace\\RestAssuredDemo\\src\\test\\java\\files\\addplace.json")))).when().post("maps/api/place/add/json").then().log().all().assertThat()
 				.statusCode(200).body("scope", equalTo("APP")).header("Server", "Apache/2.4.52 (Ubuntu)").extract()
 				.response().asString();
 		System.out.println(response);
